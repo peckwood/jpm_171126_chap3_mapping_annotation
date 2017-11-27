@@ -7,7 +7,7 @@ public class Student {
 	private String name;
 	private String email;
 	private Date dob;
-	private Gender gender;
+	private Address address;
 	
 	public Integer getStudId() {
 		return studId;
@@ -33,16 +33,15 @@ public class Student {
 	public void setDob(Date dob) {
 		this.dob = dob;
 	}
-	public Gender getGender() {
-		return gender;
+	public Address getAddress() {
+		return address;
 	}
-	public void setGender(Gender gender) {
-		this.gender = gender;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 	@Override
 	public String toString() {
-		return "Student [studId=" + studId + ", name=" + name + ", email=" + email + ", dob=" + dob + ", gender="
-				+ gender + "]";
+		return "Student [studId=" + studId + ", name=" + name + ", email=" + email + ", dob=" + dob + ", address="
+				+ address + "]";
 	}
-	 
 }

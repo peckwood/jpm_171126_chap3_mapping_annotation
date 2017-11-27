@@ -11,9 +11,6 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.transaction.TransactionFactory;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 
-import com.mybatis3.o1.domain.Gender;
-import com.mybatis3.o1.domain.Student;
-
 public class MyBatisSqlSessionFactory {
 	private static SqlSessionFactory sqlSessionFactory;
 	
@@ -33,12 +30,11 @@ public class MyBatisSqlSessionFactory {
 	public static Configuration getConfiguration(){
 		Configuration configuration = new Configuration(getEnvironment());
 		configuration.setAutoMappingBehavior(AutoMappingBehavior.FULL);
-		configuration.getTypeAliasRegistry().registerAliases("com.mybatis3.o1.domain");
+		configuration.getTypeAliasRegistry().registerAliases("com.mybatis3.o2.domain");
 		
-		configuration.getTypeHandlerRegistry().register(Gender.class, org.apache.ibatis.type.EnumOrdinalTypeHandler.class);
 		//Mappers should be added to the confguration only after registering
 		//typeAliases and typeHandlers if they have been used.
-		configuration.addMappers("com.mybatis3.o1.mappers");
+		configuration.addMappers("com.mybatis3.o2.mappers");
 		return configuration;
 	}
 	
